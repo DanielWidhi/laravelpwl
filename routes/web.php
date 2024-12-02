@@ -13,10 +13,10 @@ Route::get('/posts', function () {
     return view('posts', ['title' => 'Blog Page', 'posts' => Post::all()]);
 });
 
-Route::get('/posts/{slug}', function ($slug) {
+Route::get('/posts/{post:slug}', function (Post $post) {
     // dd($id);
 
-    $post = Post::find($slug);
+    // $post = Post::find($id);
     // dd($post);
     return view('post', ['title' => 'Single Post', 'post' => $post]);
 });
